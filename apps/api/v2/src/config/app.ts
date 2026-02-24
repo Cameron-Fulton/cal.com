@@ -36,8 +36,8 @@ const loadConfig = (): AppConfig => {
       authSecret: getEnv("NEXTAUTH_SECRET"),
     },
     stripe: {
-      apiKey: getEnv("STRIPE_API_KEY"),
-      webhookSecret: getEnv("STRIPE_WEBHOOK_SECRET"),
+      apiKey: getEnv("STRIPE_API_KEY", ""),
+      webhookSecret: getEnv("STRIPE_WEBHOOK_SECRET", ""),
       teamMonthlyPriceId: getEnv("STRIPE_TEAM_MONTHLY_PRICE_ID", "set-team-monthly-price-in-your-env"),
       isTeamBillingEnabled: getEnv("IS_TEAM_BILLING_ENABLED", true),
     },
