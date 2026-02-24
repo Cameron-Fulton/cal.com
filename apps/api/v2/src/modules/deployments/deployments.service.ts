@@ -22,10 +22,6 @@ export class DeploymentsService {
     if (this.configService.get("e2e")) {
       return true;
     }
-    // Self-hosted: skip remote license validation
-    if (this.configService.get("api.licenseKey") === "self-hosted") {
-      return true;
-    }
     let licenseKey = this.configService.get("api.licenseKey");
 
     if (!licenseKey) {
